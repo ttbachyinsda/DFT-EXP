@@ -1,0 +1,9 @@
+function y = fftconv(x1,x2)
+N1=length(x1); 
+N2=length(x2); 
+L=N1+N2-1;   
+X1=fft(x1,L); 
+X2=fft(x2,L); 
+Y=X1.*X2; 
+y_fft=ifft(Y,L); 
+y=y_fft(1:L);
